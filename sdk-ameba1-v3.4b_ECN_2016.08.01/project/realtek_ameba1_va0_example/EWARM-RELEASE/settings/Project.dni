@@ -1,0 +1,77 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[PlDriver]
+MemConfigValue=E:\data\8711\My-RTL8711\sdk-ameba1-v3.4b_ECN_20151106\project\realtek_ameba1_va0_example\EWARM-RELEASE\..\..\..\component\soc\realtek\8195a\misc\iar_utility\common\8195a.ddf
+[Jet]
+DisableInterrupts=0
+MultiCoreRunAll=0
+[ArmDriver]
+EnableCache=1
+[JLinkDriver]
+CStepIntDis=_ 0
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000004
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[DebugChecksum]
+Checksum=-1103318925
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SfrWindow]
+Show=1 1
+Sort=4 0
+[CodeCoverage]
+Enabled=_ 0
+[Trace1]
+Enabled=0
+ShowSource=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\component\common\utilities\tcptest.c}.162.2" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\component\common\utilities\tcptest.c}.212.15" 0 0 1 "" 0 "" 0
+Bp2=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\component\common\utilities\tcptest.c}.292.2" 0 0 1 "" 0 "" 0
+Bp3=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\component\common\utilities\tcptest.c}.296.2" 0 0 1 "" 0 "" 0
+Count=4
+[Aliases]
+A0=_ "D:\Projects\svn_branch3.4_12533\component\common\drivers\wlan\realtek\include\rtw_recv.h" ""
+A1=_ "D:\Projects\svn_branch3.4_12533\component\common\drivers\wlan\realtek\src\hal\OUTSRC\phydm_HWConfig.c" ""
+A2=_ "D:\Projects\svn_branch3.4_12533\component\common\drivers\wlan\realtek\src\hal\rtl8195a\src\lx_bus\rtl8195a_led.c" ""
+A3=_ "D:\Projects\svn_branch3.4_12533\component\common\drivers\wlan\realtek\src\hci\lxbus\lxbus_hci_intf.c" ""
+A4=_ "D:\Projects\svn_branch3.4_12533\component\common\drivers\wlan\realtek\src\osdep\freertos\lxbus_intf.c" ""
+A5=_ "D:\Projects\svn_branch3.4_12533\component\os\freertos\freertos_service.h" ""
+A6=_ "D:\Projects\svn_release_3.4b\component\common\api\wifi\rtw_wpa_supplicant\src\eap_peer\eap_wsc.c" ""
+A7=_ "D:\Projects\svn_release_3.4b\component\common\api\wifi\rtw_wpa_supplicant\src\utils\wpabuf.h" ""
+A8=_ "D:\Projects\svn_release_3.4b\component\soc\realtek\8195a\fwlib\ram_lib\startup.c" ""
+A9=_ "hal_diag_rom.c" ""
+A10=_ "hal_misc_rom.c" ""
+A11=_ "vectors.S" ""
+Count=12
+SuppressDialog=0

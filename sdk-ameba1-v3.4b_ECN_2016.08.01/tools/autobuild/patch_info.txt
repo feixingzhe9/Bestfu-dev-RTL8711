@@ -1,0 +1,52 @@
+patchname spi_twoboard_slave
+
+preaction:
+
+	:: make a backup folder of src and inc
+	xcopy /e /y /i src src_bak
+	xcopy /e /y /i inc inc_bak
+
+	:: overwrite spi_twoboard example to current folder
+	xcopy /e /y /i example_sources\spi_twoboard\src src
+	xcopy /e /y /i example_sources\spi_twoboard\inc inc
+
+	:: And we replace '#define SPI_IS_AS_MASTER 1' to '#define SPI_IS_AS_MASTER 0' in main.c
+	..\..\tools\autobuild\replace_string "src\main.c" "#define SPI_IS_AS_MASTER 1" "#define SPI_IS_AS_MASTER 0"
+
+postaction:
+
+	:: restore changes by removing src and inc, then move backup folder to original
+	rmdir /s /q src
+	rmdir /s /q inc
+	move src_bak src
+	move inc_bak inc
+
+================================================================================================================================
+
+patchname wlan_mp
+
+preaction:
+
+	:: make a backup copy of autoconf.h
+	copy /Y ..\..\component\common\drivers\wlan\realtek\include\autoconf.h ..\..\component\common\drivers\wlan\realtek\include\autoconf.h.bak
+
+	:: replace '//#define CONFIG_MP_INCLUDED' to '#define CONFIG_MP_INCLUDED'
+	..\..\tools\autobuild\replace_string "..\..\component\common\drivers\wlan\realtek\include\autoconf.h" "//#define CONFIG_MP_INCLUDED" "#define CONFIG_MP_INCLUDED"
+
+	:: make a backup copy of lib_wlan.a
+	copy /Y ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan.a ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan.a.bak
+
+	:: replace lib_wlan.a to lib_wlan_mp.a
+	copy /Y ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan_mp.a ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan.a
+
+postaction:
+
+	:: restore changes by moving backup file to original
+	move /Y ..\..\component\common\drivers\wlan\realtek\include\autoconf.h.bak ..\..\component\common\drivers\wlan\realtek\include\autoconf.h
+
+	:: restore changes by moving backup lib_wlan.a.bak to lib_wlan.a
+	move /Y ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan.a.bak ..\..\component\soc\realtek\8195a\misc\bsp\lib\common\IAR\lib_wlan.a
+
+================================================================================================================================
+
+
